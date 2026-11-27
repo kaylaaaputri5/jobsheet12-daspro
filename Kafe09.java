@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Kafe09 {
 
     public static void Menu(String namaPelanggan, boolean isMember, int jamKunjung) {
@@ -22,7 +24,18 @@ public class Kafe09 {
     }
 
     public static void main(String[] args) {
-        Menu("Andi", true, 15);
+        Scanner sc = new Scanner(System.in);
 
+        System.out.print("Masukkan nama pelanggan: ");
+        String nama = sc.nextLine();
+
+        System.out.print("Apakah member? (y/n): ");
+        String status = sc.next();
+        boolean isMember = status.equalsIgnoreCase("y");
+
+        System.out.print("Masukkan jam kunjung: ");
+        int jam = sc.nextInt();
+
+        Menu(nama, isMember, jam);
     }
 }
